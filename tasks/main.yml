@@ -1,0 +1,17 @@
+---
+# tasks file for get-instances-ips-of-asg
+- name: Get facts of ASG
+  ec2_asg_facts:
+    name: "{{ asg.name }}"
+  register: asg_status
+
+- name: Get facts of the instances
+  ec2_remote_facts: 
+    region: "{{ region }}"
+    filters: 
+      instance-id: "{{ item.instance_id }}"
+  with_items: "{{ asg_status.results[0].instances }}"
+  register: instances
+
+- name: Get IPs of the instances
+  set_fact: asg_instances="{{ instances.results | map(attribute='instances') | map('first') | map(attribute='public_ip_address') | list}}"
