@@ -3,6 +3,7 @@
 - name: Get facts of ASG
   ec2_asg_facts:
     name: "{{ asg.name }}"
+    region: "{{ asg.region }}"
   register: asg_status
 
 - name: Get facts of the instances
