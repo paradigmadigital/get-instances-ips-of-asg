@@ -23,4 +23,4 @@ Get IPs of the instances of an auto scaling group and return them in a list insi
 GPLv2
 
 ## Author Information
-jamatute (jamatute@paradigma)
+jamatute (jamatute@paradigmadigital.com)
