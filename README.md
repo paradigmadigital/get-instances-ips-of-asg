@@ -4,8 +4,9 @@ Get IPs of the instances of an auto scaling group and return them in a list insi
 
 ## Role Variables
 
-* `region`   : Region to launch the ec2 instance to create the new AMI
-* `asg.name` : Auto Scaling Group name
+* `asg`      : Dictionary with the information of the Autoscaling group
+  * `region` : Region to launch the ec2 instance to create the new AMI
+  * `name`   : Auto Scaling Group name
 
 ## Example playbook
 
@@ -22,4 +23,4 @@ Get IPs of the instances of an auto scaling group and return them in a list insi
 GPLv2
 
 ## Author Information
-jamatute (jamatute@paradigma)
+jamatute (jamatute@paradigmadigital.com)

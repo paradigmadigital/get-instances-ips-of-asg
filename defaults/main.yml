@@ -1,5 +1,5 @@
 ---
 # defaults file for get-instances-ips-of-asg
-region :
 asg:
   name :
+  region :

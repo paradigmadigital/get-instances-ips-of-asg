@@ -3,11 +3,12 @@
 - name: Get facts of ASG
   ec2_asg_facts:
     name: "{{ asg.name }}"
+    region: "{{ asg.region }}"
   register: asg_status
 
 - name: Get facts of the instances
   ec2_remote_facts: 
-    region: "{{ region }}"
+    region: "{{ asg.region }}"
     filters: 
       instance-id: "{{ item.instance_id }}"
   with_items: "{{ asg_status.results[0].instances }}"
